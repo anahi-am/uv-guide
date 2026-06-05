@@ -75,5 +75,5 @@ This updates both the virtual environment and `pyproject.toml` automatically.
 - [uv — Official Repository ](https://github.com/astral-sh/uv) —  The source code and full documentation for uv, by Astral. Good reference for advanced features, changelogs, and benchmarks.
 - [Python dependencies with uv](https://vladfilippov.com/python-dependencies-with-uv/) — A practical day-to-day workflow guide for uv, covering everything from adding dependencies to CI/CD integration and deployment.
 - [uv: A Guide to Python Package Management](https://flocode.substack.com/p/044-python-environments-again-uv) — Beginner-friendly walkthrough of uv for data/engineering workflows, with a focus on VS Code and Jupyter Notebooks.
-- [Production-ready Python Docker Containers with uv](arthttps://hynek.me/articles/docker-uv/) — Advanced guide on building optimised Docker containers with uv, covering multi-stage builds, layer caching, and production best practices.
+- [Production-ready Python Docker Containers with uv](https://hynek.me/articles/docker-uv/) — Advanced guide on building optimised Docker containers with uv, covering multi-stage builds, layer caching, and production best practices.
 
