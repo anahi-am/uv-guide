@@ -1,79 +1,51 @@
-## Why UV?
+## ¿Por qué uv?
 
-Python used to require several tools to set up a project. `uv` replaces all of them in a single tool.
-The main benefit is consistency. `uv` generates a uv.lock file, which records the exact version of every package installed — so every machine, every CI run (automated tests that run in the cloud), and every deployment (when you push your app to a server) works from the exact same environment. No more "it works on my computer...".
-Every uv add or uv remove automatically updates pyproject.toml, resolves dependencies, and rewrites the lockfile in one step, no manual edits needed.
+Python solía requerir varias herramientas para configurar un proyecto. `uv` las reemplaza todas en una sola herramienta.
 
-## What is it?
+El beneficio principal es la consistencia. `uv` genera un archivo `uv.lock` que registra la versión exacta de cada paquete instalado — así cada máquina, cada ejecución de CI (tests automáticos que corren en la nube), y cada despliegue (cuando subes tu app a un servidor) funciona desde el mismo entorno exacto. Se acabó el "en mi ordenador funciona...".
 
-`uv` is a Python dependency manager written in Rust, which makes it much faster than `pip`.
-It manages everything: the project's Python version, the virtual environment, and the dependencies themselves (the external packages your code needs to run).
+Cada `uv add` o `uv remove` actualiza automáticamente `pyproject.toml`, resuelve las dependencias y reescribe el lockfile en un solo paso, sin ediciones manuales.
 
-## Installation
+## ¿Qué es?
+
+`uv` es un gestor de dependencias de Python escrito en Rust, lo que lo hace mucho más rápido que `pip`.
+
+Gestiona todo: la versión de Python del proyecto, el entorno virtual, y las dependencias (los paquetes externos que tu código necesita para funcionar).
+
+## Instalación
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-## Usage
+## Comandos básicos
 
-**Initialize a new project:**
-
+**Inicializar un nuevo proyecto y crear un entorno virtual:**
 ```bash
 uv init
 ```
 
-**Create a virtual environment and install dependencies:**
-
+**Añadir un paquete nuevo:**
 ```bash
-uv venv
-uv sync
+uv add <nombre-del-paquete>
 ```
 
-**Activate the environment:**
-
+**Eliminar un paquete:**
 ```bash
-# macOS / Linux
-source .venv/bin/activate
-
-# Windows
-.venv\Scripts\activate
+uv remove <nombre-del-paquete>
 ```
 
-**Add a new package:**
-
-```bash
-uv add <package-name>
-```
-
-**Remove a package:**
-
-```bash
-uv remove <package-name>
-```
-
-**Run a script or command inside the environment:**
-
+**Ejecutar un script o comando dentro del entorno:**
 ```bash
 uv run python main.py
 uv run pytest
 ```
-uv run executes anything inside the project environment, automatically verifying it's in sync with the lockfile before running, so you're always using the correct dependencies.
 
-**Update all dependencies:**
+`uv run` ejecuta cualquier cosa dentro del entorno del proyecto, verificando automáticamente que está sincronizado con el lockfile antes de ejecutar.
 
-```bash
-uv sync --upgrade
-```
+## Artículos interesantes
 
-This updates both the virtual environment and `pyproject.toml` automatically.
-
----
-
-## Interesting Articles
-
-- [uv — Official Repository ](https://github.com/astral-sh/uv) —  The source code and full documentation for uv, by Astral. Good reference for advanced features, changelogs, and benchmarks.
-- [Python dependencies with uv](https://vladfilippov.com/python-dependencies-with-uv/) — A practical day-to-day workflow guide for uv, covering everything from adding dependencies to CI/CD integration and deployment.
-- [uv: A Guide to Python Package Management](https://flocode.substack.com/p/044-python-environments-again-uv) — Beginner-friendly walkthrough of uv for data/engineering workflows, with a focus on VS Code and Jupyter Notebooks.
-- [Production-ready Python Docker Containers with uv](https://hynek.me/articles/docker-uv/) — Advanced guide on building optimised Docker containers with uv, covering multi-stage builds, layer caching, and production best practices.
-
+- [uv — Repositorio oficial](https://github.com/astral-sh/uv) — El código fuente y la documentación completa de uv, por Astral. Buena referencia para funcionalidades avanzadas, changelogs y benchmarks.
+- [Python dependencies with uv](https://vladfilippov.com/python-dependencies-with-uv/) — Guía práctica del flujo de trabajo diario con uv, que cubre desde añadir dependencias hasta integración con CI/CD y despliegue.
+- [uv: A Guide to Python Package Management](https://flocode.substack.com/p/044-python-environments-again-uv) — Introducción a uv para principiantes orientada a flujos de trabajo de datos e ingeniería, con foco en VS Code y Jupyter Notebooks.
+- [Production-ready Python Docker Containers with uv](https://hynek.me/articles/docker-uv/) — Guía avanzada para construir contenedores Docker optimizados con uv, cubriendo builds multi-stage, layer caching y buenas prácticas de producción.
