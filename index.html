@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <body style="margin: 0; padding: 40px; background: #fff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center;">
+  <body style="margin: 0; padding: 40px; background: #fff; font-family: sans-serif;">
     
-    <h1 style="color: #1a1a1a; margin-bottom: 8px;">uv</h1>
-    
-    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/slides/WAdxKDDyU1JbyepmW0uxL3/Pildora-uv-Spanish?node-id=2024-357&embed-host=share&starting-page=0" allowfullscreen></iframe>
+    <h1 style="color: #1a1a1a; margin-bottom: 8px; text-align: center;">uv</h1>
 
-    <div style="max-width: 800px; width: 100%; margin-top: 48px;">
-      <h2 style="color: #1a1a1a;"> Dato interesante: herramientas con uv</h2>
-      <p style="color: #555;">uv permite ejecutar herramientas de Python, como por ejemplo ruff o pytest sin necesidad de instalarlas en proyecto.</p>
+    <div style="display: flex; justify-content: center; margin-bottom: 48px;">
+      <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/slides/WAdxKDDyU1JbyepmW0uxL3/Pildora-uv-Spanish?node-id=0-20&embed-host=share" allowfullscreen></iframe>
+    </div>
 
-      <h3 style="color: #1a1a1a;"><code>uvx</code> ejecutar sin instalar</h3>
+    <div style="max-width: 800px; width: 100%; margin: 0 auto;">
+      <h2 style="color: #1a1a1a;">Dato interesante: herramientas con uv</h2>
+      <p style="color: #555;">uv permite ejecutar herramientas de Python, como por ejemplo ruff o pytest sin necesidad de instalarlas en el proyecto.</p>
+      <h3 style="color: #1a1a1a;"><code>uvx</code> — ejecutar sin instalar</h3>
       <p style="color: #555;">Ejecuta una herramienta en un entorno temporal aislado y desaparece cuando termina.</p>
       <pre style="background: #f5f5f5; padding: 16px; border-radius: 8px;"><code>uvx ruff check .
 uvx pycowsay hola desde uv</code></pre>
-
-      <h3 style="color: #1a1a1a;"><code>uv tool install</code> instalar de forma permanente</h3>
+      <h3 style="color: #1a1a1a;"><code>uv tool install</code> — instalar de forma permanente</h3>
       <p style="color: #555;">si usas una herramienta constantemente, instálala globalmente para no tener que escribir <code>uvx</code> cada vez.</p>
       <pre style="background: #f5f5f5; padding: 16px; border-radius: 8px;"><code>uv tool install ruff
 ruff --version</code></pre>
-
       <h3 style="color: #1a1a1a;">actualizar herramientas</h3>
       <pre style="background: #f5f5f5; padding: 16px; border-radius: 8px;"><code>uv tool upgrade ruff
 uv tool upgrade --all</code></pre>
-
     </div>
 
   </body>
